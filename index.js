@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/api', require('./routes/api'));
+
 // Rute Utama (Agar saat buka http://localhost:3000 langsung muncul dan TIDAK Cannot GET)
 app.get('/', (req, res) => {
   res.send('API Server is running...');
